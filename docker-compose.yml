@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  mirai-http:
+    image: ttionya/mirai-http:latest
+    restart: always
+    environment:
+      LANG: 'C.UTF-8'
+    ports:
+      - '127.0.0.1:8080:8080'
+    volumes:
+      - ./bots:/mirai/bots
+      - ./config:/mirai/config
+      - ./data:/mirai/data
