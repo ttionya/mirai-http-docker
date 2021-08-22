@@ -1,5 +1,7 @@
 # mirai-http
 
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/ttionya/mirai-http?label=Version&logo=docker)](https://hub.docker.com/r/ttionya/mirai-http/tags) [![Docker Pulls](https://img.shields.io/docker/pulls/ttionya/mirai-http?label=Docker%20Pulls&logo=docker)](https://hub.docker.com/r/ttionya/mirai-http) [![GitHub](https://img.shields.io/github/license/ttionya/vaultwarden-backup?label=License&logo=github)](https://github.com/ttionya/mirai-http-docker/blob/master/LICENSE)
+
 集成了 `mirai-api-http` 插件的 Mirai QQ 机器人 Docker 镜像。
 
 <br>
