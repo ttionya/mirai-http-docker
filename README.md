@@ -6,13 +6,11 @@
 
 <br>
 
-
-
 ## 使用方法
 
 你需要先进入要存放 Mirai 配置的目录。
 
-若使用 docker-compose，请下载 `docker-compose.yml` 文件到当前目录。
+若使用 `docker-compose`，请下载 `docker-compose.yml` 文件到当前目录。
 
 ### 1. 生成配置文件并修改
 
@@ -69,15 +67,19 @@ docker-compose up -d
 
 <br>
 
-
-
 ## 插件
 
-内置插件及版本信息详见 [Plugins](/plugins/README.md)
+内置插件及版本信息详见 [Plugins](/plugins/README.md)。
 
 <br>
 
+## 关联项目
 
+- [Mirai](https://github.com/mamoe/mirai)
+- [iTXTech MCL Installer](https://github.com/iTXTech/mcl-installer)
+- [Mirai Console Loader](https://github.com/iTXTech/mirai-console-loader)
+
+<br>
 
 ## 许可证
 
