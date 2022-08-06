@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-MCL_INSTALLER_VERSION="1.0.3"
-MCL_INSTALLER_FILE="mcl-installer-${MCL_INSTALLER_VERSION}-linux-amd64"
+MCL_INSTALLER_VERSION="1.0.7"
+MCL_INSTALLER_FILE="mcl-installer-${MCL_INSTALLER_VERSION}-linux-amd64-musl"
 
 
 function set_language() {
@@ -18,14 +18,14 @@ function install_dependency() {
 
     # clean
     yum clean all
-    rm -rf /var/cache/dnf
+    rm -rf "/var/cache/dnf"
 }
 
 function download_mcl() {
     # download installer
     wget -c -t3 -T60 "https://github.com/iTXTech/mcl-installer/releases/download/v${MCL_INSTALLER_VERSION}/${MCL_INSTALLER_FILE}"
     if [[ $? != 0 ]]; then
-        rm -rf ${MCL_INSTALLER_FILE}
+        rm -rf "${MCL_INSTALLER_FILE}"
         echo "download mcl-installer failed"
         exit 1
     fi
@@ -35,7 +35,7 @@ function download_mcl() {
     # download mcl
     "./${MCL_INSTALLER_FILE}" << EOF
 Y
-16
+17
 JRE
 x64
 Y
@@ -58,10 +58,10 @@ function download_core() {
 }
 
 
+cd "/mirai"
+
 set_language
 install_dependency
-
-cd "/mirai"
 
 download_mcl
 download_core
