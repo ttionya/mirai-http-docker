@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.1
+
+### Feature
+
+- Update plugin `mirai-api-http` to `mirai-api-http@2.6.2`
+
+<br>
+
 ## v1.1.0
 
 ### Feature
