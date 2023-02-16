@@ -18,6 +18,9 @@ jobs:
         name: Checkout
         uses: actions/checkout@v3
       -
+        name: Prepare
+        run: echo "TAG=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       -
@@ -39,7 +42,7 @@ jobs:
           push: true
           tags: |
             ttionya/mirai-http:latest
-            ttionya/mirai-http:${{ github.ref#refs/tags/v }}
+            ttionya/mirai-http:${{ env.TAG }}
 
   publish-beta:
     name: Docker Publish Beta
@@ -52,6 +55,9 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
+      -
+        name: Prepare
+        run: echo "TAG=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -73,4 +79,4 @@ jobs:
           platforms: 'linux/amd64'
           push: true
           tags: |
-            ttionya/mirai-http:${{ github.ref#refs/tags/v }}
+            ttionya/mirai-http:${{ env.TAG }}
