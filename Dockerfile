@@ -1,4 +1,4 @@
-FROM rockylinux/rockylinux:9.1
+FROM rockylinux/rockylinux:9.1.20221221
 
 LABEL "repository"="https://github.com/ttionya/mirai-http-docker" \
   "homepage"="https://github.com/ttionya/mirai-http-docker" \
