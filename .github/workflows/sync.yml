@@ -1,0 +1,29 @@
+name: 'Sync'
+
+on:
+  push:
+  delete:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  gitee:
+    name: Sync to Gitee
+
+    runs-on: ubuntu-latest
+
+    if: ${{ github.actor != 'dependabot[bot]' }}
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      -
+        name: Sync
+        uses: ttionya/Repository-Sync-Hub@v1
+        with:
+          target_repository: 'https://gitee.com/ttionya/mirai-http-docker.git'
+          http_access_name: 'ttionya'
+          http_access_token: ${{ secrets.GITEE_HTTP_ACCESS_TOKEN }}
