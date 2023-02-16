@@ -1,4 +1,4 @@
-FROM rockylinux/rockylinux:8.6
+FROM rockylinux/rockylinux:9.1
 
 LABEL "repository"="https://github.com/ttionya/mirai-http-docker" \
   "homepage"="https://github.com/ttionya/mirai-http-docker" \
@@ -11,4 +11,4 @@ COPY plugins/* /mirai/plugins/
 
 RUN bash /app/install.sh
 
-ENTRYPOINT ["/mirai/mcl"]
+ENTRYPOINT ["/mirai/mcl", "-u"]
